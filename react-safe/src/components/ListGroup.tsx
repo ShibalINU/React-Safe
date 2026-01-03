@@ -1,31 +1,53 @@
 import { Fragment } from "react";
 function ListGroup() {
+  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
   return (
+    //jsx expression
     <Fragment>
-      <h1>Features</h1>
-      <ol className="list-group list-group-numbered">
-        <li className="list-group-item d-flex justify-content-between align-items-start">
-          <div className="ms-2 me-auto">
-            <div className="fw-bold">Realtime Parent Tracker</div>
-            Content for list item
+      <h1>Dynamic Array List</h1>
+      {items.length === 0 ? <p>No items found</p> : null}
+      <ul className="list-group">
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+      <h1>Bootstrap</h1>
+      <i>Hardcoded</i>
+      <div className="list-group">
+        <a
+          href="#"
+          className="list-group-item list-group-item-action active"
+          aria-current="true"
+        >
+          <div className="d-flex w-100 justify-content-between">
+            <h5 className="mb-1">List group item heading</h5>
+            <small>3 days ago</small>
           </div>
-          <span className="badge text-bg-primary rounded-pill">14</span>
-        </li>
-        <li className="list-group-item d-flex justify-content-between align-items-start">
-          <div className="ms-2 me-auto">
-            <div className="fw-bold">Geofenced route system</div>
-            Content for list item
+          <p className="mb-1">Some placeholder content in a paragraph.</p>
+          <small>And some small print.</small>
+        </a>
+        <a href="#" className="list-group-item list-group-item-action">
+          <div className="d-flex w-100 justify-content-between">
+            <h5 className="mb-1">List group item heading</h5>
+            <small className="text-body-secondary">3 days ago</small>
           </div>
-          <span className="badge text-bg-primary rounded-pill">14</span>
-        </li>
-        <li className="list-group-item d-flex justify-content-between align-items-start">
-          <div className="ms-2 me-auto">
-            <div className="fw-bold">Certified Drivers</div>
-            Content for list item
+          <p className="mb-1">Some placeholder content in a paragraph.</p>
+          <small className="text-body-secondary">
+            And some muted small print.
+          </small>
+        </a>
+        <a href="#" className="list-group-item list-group-item-action">
+          <div className="d-flex w-100 justify-content-between">
+            <h5 className="mb-1">List group item heading</h5>
+            <small className="text-body-secondary">3 days ago</small>
           </div>
-          <span className="badge text-bg-primary rounded-pill">14</span>
-        </li>
-      </ol>
+          <p className="mb-1">Some placeholder content in a paragraph.</p>
+          <small className="text-body-secondary">
+            And some muted small print.
+          </small>
+        </a>
+      </div>
+      ;
     </Fragment>
   );
 }
